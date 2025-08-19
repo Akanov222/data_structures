@@ -8,11 +8,11 @@ public class Reverse {
     public static void main(String[] args) {
         List<Integer> integerList = new ArrayList<>(Arrays.asList(1, 4, 8, 17, 2, 8, 14));
         System.out.println(integerList);
-        reversList(integerList);
+        integerList = reversList(integerList);
         System.out.println(integerList);
     }
 
-    public static void reversList(List<Integer> list) {
+    public static List<Integer> reversList(List<Integer> list) {
         int left = 0;
         int wright = list.size() - 1;
 
@@ -24,6 +24,7 @@ public class Reverse {
             left++;
             wright--;
         }
+        return list;
     }
 }
 
@@ -32,8 +33,8 @@ public class Reverse {
 Задача: Развернуть список без создания нового списка.
 
 Объяснение:
-Используем два указателя: один с начала, другой с конца
-На каждой итерации меняем местами элементы
-Сложность: O(n) по времени, O(1) по памяти
-Работаем "на месте" - не создаем новый список
+- Используем два указателя: один с начала, другой с конца
+- На каждой итерации меняем местами элементы
+- Сложность: O(n) по времени, O(1) по памяти
+- Работаем "на месте" - не создаем новый список
 */
