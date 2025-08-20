@@ -9,8 +9,7 @@ public class RemoveDuplicates {
     public static void main(String[] args) {
         List<Integer> integerList =
                 new ArrayList<>(Arrays.asList(12, 18, 7, 4, 12, 18, 7, 19, 3, 4, 5, 19, 7, 402, 3, 402, 5));
-        System.out.println(integerList);
-        Collections.sort(integerList);
+        Collections.sort(integerList); // По условию задачи список должен быть отсортирован
         System.out.println(integerList);
         removeDuplicates(integerList);
         System.out.println(integerList);
@@ -35,6 +34,9 @@ public class RemoveDuplicates {
 }
 
 /*
+2. Удаление дубликатов из отсортированного списка (in-place)
+Задача: Удалить дубликаты из отсортированного списка, оставив только уникальные элементы.
+
 Объяснение:
 - Используем технику "двух указателей"
 - readIndex читает элементы, writeIndex записывает уникальные
