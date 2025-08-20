@@ -9,9 +9,10 @@ public class MergeLists {
     public static void main(String[] args) {
         List<Integer> list1 = new ArrayList<>(Arrays.asList(1, 14, 20, 56, 20, 25, 14, 56, 20));
         List<Integer> list2 = new ArrayList<>(Arrays.asList(14, 20, 56, 4));
+//        List<Integer> list1 = new ArrayList<>(); // Тестируем пустой список
+//        List<Integer> list2 = new ArrayList<>(); // Тестируем пустой список
         Collections.sort(list1);
         Collections.sort(list2);
-
         System.out.println(list1);
         System.out.println(list2);
 

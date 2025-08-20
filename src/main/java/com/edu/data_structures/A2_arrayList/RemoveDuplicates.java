@@ -9,6 +9,7 @@ public class RemoveDuplicates {
     public static void main(String[] args) {
         List<Integer> integerList =
                 new ArrayList<>(Arrays.asList(12, 18, 7, 4, 12, 18, 7, 19, 3, 4, 5, 19, 7, 402, 3, 402, 5));
+//        List<Integer> integerList = new ArrayList<>(); // Тестируем пустой список
         Collections.sort(integerList); // По условию задачи список должен быть отсортирован
         System.out.println(integerList);
         removeDuplicates(integerList);

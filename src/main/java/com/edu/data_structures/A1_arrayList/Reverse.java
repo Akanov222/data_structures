@@ -7,6 +7,7 @@ import java.util.List;
 public class Reverse {
     public static void main(String[] args) {
         List<Integer> integerList = new ArrayList<>(Arrays.asList(1, 4, 8, 17, 2, 8, 14));
+//        List<Integer> integerList = new ArrayList<>(); // Тестируем пустой список
         System.out.println(integerList);
         integerList = reversList(integerList);
         System.out.println(integerList);
