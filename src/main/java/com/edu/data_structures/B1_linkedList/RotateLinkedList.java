@@ -3,13 +3,13 @@ package com.edu.data_structures.B1_linkedList;
 public class RotateLinkedList {
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
-        head.next = new ListNode(3);
-        head.next.next = new ListNode(4);
-        head.next.next.next = new ListNode(7);
-        head.next.next.next.next = new ListNode(8);
-        head.next.next.next.next.next = new ListNode(12);
-        head.next.next.next.next.next.next = new ListNode(17);
-        head.next.next.next.next.next.next.next = new ListNode(21);
+        head.setNext(new ListNode(3));
+        head.getNext().setNext(new ListNode(4));
+        head.getNext().getNext().setNext(new ListNode(7));
+        head.getNext().getNext().getNext().setNext(new ListNode(8));
+        head.getNext().getNext().getNext().getNext().setNext(new ListNode(12));
+        head.getNext().getNext().getNext().getNext().getNext().setNext(new ListNode(17));
+        head.getNext().getNext().getNext().getNext().getNext().getNext().setNext(new ListNode(21));
 
         ListNode reversed = reversList(head);
         printList(reversed);
@@ -19,7 +19,7 @@ public class RotateLinkedList {
 
         while (head != null) {
             System.out.print(head.val + " ->");
-            head = head.next;
+            head = head.getNext();
         }
     }
 
@@ -27,8 +27,8 @@ public class RotateLinkedList {
         ListNode preview = null;
         ListNode current = head;
         while (current != null) {
-            ListNode temp = current.next;
-            current.next = preview;
+            ListNode temp = current.getNext();
+            current.setNext(preview);
             preview = current;
             current = temp;
 // preview, current, current.next
@@ -39,7 +39,7 @@ public class RotateLinkedList {
 
     public static class ListNode {
         int val;
-        ListNode next;
+        private ListNode next;
 
         public ListNode() {
         }
@@ -50,6 +50,14 @@ public class RotateLinkedList {
 
         public ListNode(int val, ListNode next) {
             this.val = val;
+            this.setNext(next);
+        }
+
+        public ListNode getNext() {
+            return next;
+        }
+
+        public void setNext(ListNode next) {
             this.next = next;
         }
     }
