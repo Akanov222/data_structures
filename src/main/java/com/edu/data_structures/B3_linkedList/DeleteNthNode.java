@@ -7,12 +7,13 @@ public class DeleteNthNode {
         ListNode node3 = new ListNode(5);
         ListNode node4 = new ListNode(7);
 
-        node1.setNext(node2);
-        node2.setNext(node3);
-        node3.setNext(node4);
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
 
         printNode(node1);
         node1 = deleteNthNode(node1, 2);
+        System.out.println();
         printNode(node1);
     }
 
@@ -23,8 +24,8 @@ public class DeleteNthNode {
         ListNode fast = dummy;
         ListNode slow = dummy;
 
-        for (int i = 0; i < n; i++) {
-            fast.setNext(fast.getNext().getNext());
+        for (int i = 0; i <= n; i++) {
+            fast = fast.next;
         }
 
         while (fast != null) {
@@ -39,10 +40,11 @@ public class DeleteNthNode {
     }
 
     public static void printNode(ListNode head) {
-        ListNode cursor = head;
+        ListNode cursor = new ListNode(0, head);
+        cursor = cursor.next;
         while (cursor != null) {
             System.out.print(cursor.getVal() + " ->");
-            cursor.setNext(cursor.getNext().getNext());
+            cursor = cursor.next;
         }
     }
 
@@ -51,6 +53,11 @@ public class DeleteNthNode {
         ListNode next;
 
         public ListNode(int val) {
+            this.val = val;
+        }
+
+        public ListNode(int val, ListNode next) {
+            this.next = next;
             this.val = val;
         }
 
